@@ -8,12 +8,21 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "expo": "~39.0.2",
     "expo-status-bar": "~1.0.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.18",
+    "morgan": "^1.10.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "react-router-native": "^5.2.0",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

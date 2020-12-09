@@ -1,39 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { useState } from 'react';
+import HomeScreen from './screens/HomeScreen';
+import userService from './services/userService';
 
 export default function App() {
-  const [name, setName] = useState('Gaby')
+  const [name, setName] = useState('Gaby');
+  const [user, setUser] = useState();
 
-  const clickHandler = () => {
-    if (name === 'Gaby') {
-      setName('Gaby Cabrera');
-    } else {
-      setName('Gaby');
-    }
+  handleLogout = () => {
+    userService.logout();
+    setUser(null);
   }
 
+  handleSignupOrLogin = async () => {
+    try {
+      const user = await userService.getUser();
+      setUser(user);
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>
-        My name is {name}
-      </Text>
-      <View style={styles.buttonContainer}>
-        <Button title='Click Me' onPress={clickHandler}/>
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} initialParams={{name, setName}} />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    marginTop: 20,
-  },
-});
+

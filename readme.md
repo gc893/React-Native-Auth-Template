@@ -21,3 +21,14 @@ Besides having to use different packages compatible with React Native as mention
   - launching your front-end server with **npm start**
   - scanning the QR code provided with your mobile device
   - Finally, this means the front-end can't communicate with the back using localhost anymore. If you have a mac, you can change "localhost:3001" with "*your_user*.local:3001".
+
+### Instructions
+
+- Download Expo's [app](https://apps.apple.com/app/apple-store/id982107779).
+- Fork and clone this repository.
+- Run rm -rf .git on your terminal inside the project directory.
+- Re-Initialize Git with "git init".
+- Add a .env file with a SECRET value.
+- Change the BASE_URL on the userService.js file with your computer's name.
+- Run Back-end and Front-end servers.
+- Scan QR code provided by Expo qith your mobile device.

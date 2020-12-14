@@ -1,3 +1,5 @@
+![](https://i.imgur.com/TJhrGDD.jpg)
+
 ## React Native Auth Template
 
 Template that provides Sign Up, Log In and Log Out functions to a blank mobile app.
@@ -28,7 +30,7 @@ Besides having to use different packages compatible with React Native as mention
 - Fork and clone this repository.
 - Run "rm -rf .git" on your terminal inside the project directory.
 - Re-Initialize Git with "git init".
-- Add a .env file with a SECRET value.
+- Add a .env file with a SECRET value, and configure the database connection in the .env and the database "config" file as needed.
 - Change the BASE_URL on the userService.js file with your computer's name.
 - Run Back-end and Front-end servers.
 - Scan QR code provided by Expo qith your mobile device.

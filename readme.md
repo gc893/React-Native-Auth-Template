@@ -22,7 +22,7 @@ Besides having to use different packages compatible with React Native as mention
   - downloading Expo's [app](https://apps.apple.com/app/apple-store/id982107779)
   - launching your front-end server with **npm start**
   - scanning the QR code provided with your mobile device
-  - Finally, this means the front-end can't communicate with the back using localhost anymore. If you have a mac, you can change "localhost:3001" with "*your_user*.local:3001".
+  - Finally, this means the front-end can't communicate with the back using localhost anymore. If you have a mac, you can change "localhost:3001" with "*name*.local:3001".
 
 ### Instructions
 

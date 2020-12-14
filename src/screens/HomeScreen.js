@@ -1,43 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React from 'react';
 import { Button,
   StyleSheet,
   Text,
   View,
-  ScrollView,
-  TextInput
+  ScrollView
 } from 'react-native';
+import {useUserContext} from '../hooks/useUserContext'
 
-function HomeScreen({route}) {
-  const {name, setName} = route.params;
-
-  const clickHandler = () => {
-    if (name === 'Gaby') {
-      setName('Gaby Cabrera');
-    } else {
-      setName('Gaby');
-    }
-  }
-
+function HomeScreen({navigation}) {
+  const {user, handleLogOut} = useUserContext();
     return (
+      <>
+      <StatusBar style="auto" />
       <ScrollView>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>
-          My name is {name}
-        </Text>
-        <View style={styles.buttonContainer}>
-          <Button title='Click Me' onPress={clickHandler}/>
-        </View>
-        <StatusBar style="auto" />
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Your name"
-          maxLength={20}
-        />
+      <Text>Welcome, {user?.name}</Text>
+            <View style={styles.buttonContainer}>
+            <Button
+              title="Sign Out"
+              onPress={() => handleLogOut()}
+            />
+          </View>
       </View>
     </ScrollView>
+    </>
     );
   }
 

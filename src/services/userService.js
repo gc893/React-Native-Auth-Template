@@ -1,5 +1,5 @@
 import tokenService from './tokenService';
-const BASE_URL = '/api/users/';
+const BASE_URL = 'http://gaby.local:3001/api/users/';
 
   // The old signup function (if Sam's way fails...)
 // function signup(user) {

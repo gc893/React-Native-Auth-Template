@@ -26,7 +26,7 @@ Besides having to use different packages compatible with React Native as mention
 
 - Download Expo's [app](https://apps.apple.com/app/apple-store/id982107779).
 - Fork and clone this repository.
-- Run rm -rf .git on your terminal inside the project directory.
+- Run "rm -rf .git" on your terminal inside the project directory.
 - Re-Initialize Git with "git init".
 - Add a .env file with a SECRET value.
 - Change the BASE_URL on the userService.js file with your computer's name.

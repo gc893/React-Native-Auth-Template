@@ -5,9 +5,8 @@ Template that provides Sign Up, Log In and Log Out functions to a blank mobile a
 ### Technical Details
 
 - Created with [Expo](https://expo.io/).
-  `code`
 - Back-End provided by Ben Manley and David Stinson @ [MERN JWT Template](https://github.com/mongoose-airlines/jwt-auth-template).
-- base64 String decoding done with [Buffer](https://www.npmjs.com/package/buffer).
+- base64 String decoding done with [Buffer](https://www.npmjs.com/package/buffer) instead of atob.
 - LocalStorage replaced with [@react-native-async-storage/async-storage](https://github.com/react-native-async-storage/async-storage).
 - Navigation done with [@react-navigation/native](https://www.npmjs.com/package/@react-navigation/native).
 

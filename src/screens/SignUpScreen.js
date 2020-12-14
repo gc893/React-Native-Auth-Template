@@ -15,15 +15,19 @@ function SignUpScreen() {
     const [formEmail, setFormEmail ] = useState();
     const [formPassword, setFormPassword ] = useState();
     const [formPasswordConf, setFormPasswordConf ] = useState();
+    const [loading, setLoading] = useState(false);
     const {handleSignupOrLogin} = useUserContext();
 
     const handleSubmit = async (e) => {
         try {
+          setLoading(true);
           await userService.signup({'name': formUser, 'email': formEmail, 'password': formPassword, 'passwordConf': formPasswordConf});
           console.log("YES!");
           handleSignupOrLogin();
         } catch (err) {
           console.log(err);
+        } finally {
+            setLoading(false);
         }
       }
     
@@ -67,7 +71,7 @@ function SignUpScreen() {
                 <Button
                     title="Submit"
                     onPress={handleSubmit}
-                    disabled={isFormInvalid()}
+                    disabled={isFormInvalid() || loading}
                 />
             </View>
             </ScrollView>

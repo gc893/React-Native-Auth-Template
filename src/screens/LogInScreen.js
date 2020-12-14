@@ -13,15 +13,19 @@ import { useUserContext } from '../hooks/useUserContext';
 function LogInScreen({ navigation }) {
   const [formEmail, setFormEmail ] = useState();
   const [formPassword, setFormPassword ] = useState();
+  const [loading, setLoading] = useState(false);
   const {handleSignupOrLogin} = useUserContext();
 
   const handleSubmit = async (e) => {
     try {
+      setLoading(true);
       await userService.login({'email': formEmail, 'pw': formPassword});
       console.log("YES!");
       handleSignupOrLogin();
     } catch (err) {
       alert(err.message);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -53,7 +57,7 @@ function LogInScreen({ navigation }) {
     </View>
     <Button
         title="Login"
-        disabled={isFormInvalid()}
+        disabled={isFormInvalid() || loading}
         onPress={handleSubmit}
     />
     <Button

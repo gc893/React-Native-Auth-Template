@@ -31,6 +31,7 @@ Besides having to use different packages compatible with React Native as mention
 - Run "rm -rf .git" on your terminal inside the project directory.
 - Re-Initialize Git with "git init".
 - Add a .env file with a SECRET value, and configure the database connection in the .env and the database "config" file as needed.
+- Go into the node modules directory, open the "expo" folder, and replace the source of the import for "app" on "the "AppEntry.js" file for '../../src/App'.
 - Change the BASE_URL on the userService.js file with your computer's name.
 - Run Back-end and Front-end servers.
 - Scan QR code provided by Expo qith your mobile device.
